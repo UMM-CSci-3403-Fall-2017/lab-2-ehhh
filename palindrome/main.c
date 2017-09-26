@@ -6,6 +6,7 @@
 
 int main(int argc, char* argv[]) {
   char* line;
+  char* sarah;
   int size;
   
   size = 100;
@@ -20,7 +21,9 @@ int main(int argc, char* argv[]) {
     // Without it, nothing will ever be a palindrome, unless it happens
     // to somehow start with a '\n'.
     line[strcspn(line, "\n")] = '\0';
-    printf("Is the string <%s> a palindrome? %s\n", line, palindrome(line));
+    sarah = palindrome(line);
+    printf("Is the string <%s> a palindrome? %s\n", line, sarah);
+    free(sarah);
   }
 
   free(line);
